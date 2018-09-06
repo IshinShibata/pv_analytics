@@ -1,11 +1,14 @@
 window.onload = function(){
 
-$.ajax({
-      url: location.pathname,
-      type: "post",
-      dataType: 'json',
-      data:
-      contentType: false
-    })
+
+var url = location.pathname
+
+// $.ajax({
+//       url: location.pathname,
+//       type: "post",
+//       dataType: 'json',
+//       data:
+//       contentType: false
+//     })
 
 }
