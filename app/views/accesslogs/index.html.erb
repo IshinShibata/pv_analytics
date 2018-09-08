@@ -1,0 +1,30 @@
+<h1>PV集計</h1>
+
+<label>Date:</label>
+<div>
+<%= form_tag(root_path, method: :get) do %>
+<%= text_field(:date, class: 'form', :placeholder => "2018/09/20") %>
+<%= submit_tag('Send', class: 'btn btn-primary') %>
+<% end %>
+</div>
+
+<div>
+<%= label_tag(:token, 'Token:') %>
+<div>
+  <%= text_field(:settings, :token, value: @token, class: 'form-control' 'form') %>
+  <%= submit_tag('Show PV', class: 'btn btn-primary') %>
+</div>
+</div>
+
+<table border>
+  <tr>
+    <th>時間帯</th>
+    <th>pv</th>
+  </tr>
+<%- @access_log_array.each_with_index do |pv, index| %>
+  <tr>
+    <td><%= index %></td>
+    <td class= "pvtd"><%= pv %></td>
+  </tr>
+<% end %>
+</table>
