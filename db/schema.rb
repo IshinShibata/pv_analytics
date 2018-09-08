@@ -10,39 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180906060731) do
+ActiveRecord::Schema.define(version: 20180908075915) do
 
-  create_table "pvs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "url_id"
-    t.bigint "site_id"
-    t.index ["site_id"], name: "index_pvs_on_site_id"
-    t.index ["url_id"], name: "index_pvs_on_url_id"
-  end
-
-  create_table "sites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-    t.bigint "url_id"
-    t.bigint "pv_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["pv_id"], name: "index_sites_on_pv_id"
-    t.index ["url_id"], name: "index_sites_on_url_id"
-  end
-
-  create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "content"
+  create_table "access_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "token_id"
+    t.text "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "urls", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "content"
+  create_table "tokens", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "identifier"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "site_id"
-    t.index ["site_id"], name: "index_urls_on_site_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -62,9 +42,4 @@ ActiveRecord::Schema.define(version: 20180906060731) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "pvs", "sites"
-  add_foreign_key "pvs", "urls"
-  add_foreign_key "sites", "pvs"
-  add_foreign_key "sites", "urls"
-  add_foreign_key "urls", "sites"
 end
