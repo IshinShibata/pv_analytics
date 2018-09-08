@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PvTest < ActiveSupport::TestCase
+class AccesslogsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
