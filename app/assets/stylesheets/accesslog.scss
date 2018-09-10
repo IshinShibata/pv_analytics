@@ -19,3 +19,64 @@ table td {
 .pvtd{
   padding: 3px 15px;
 }
+
+.token_url_boxcontainer{
+
+}
+.tag_create{
+  // margin-top: 5px;
+  margin-left: 10px;
+  float: left;
+}
+.tag_button{
+  margin-top: 5px;
+}
+
+.tag_create_area{
+  width: 250px;
+  height: 100px;
+
+}
+.token{
+  display: inline-block;
+
+}
+.url{
+
+  display: inline-block;
+  margin-left: 10px;
+}
+
+h1{
+  position: relative;
+  padding-left: 50px;
+}
+
+h1:before {
+position: absolute;
+content: '';
+bottom: -3px;
+left: 0;
+width: 0;
+height: 0;
+border: none;
+border-left: solid 15px transparent;
+border-bottom: solid 15px rgb(119, 195, 223);
+}
+h1:after {
+position: absolute;
+content: '';
+bottom: -3px;
+left: 10px;
+width: 100%;
+border-bottom: solid 3px rgb(119, 195, 223);
+}
+
+.data_aggregation{
+  float: left;
+  margin-left: 40px;
+}
+
+.aggregation_table{
+  margin-top: 10px;
+}

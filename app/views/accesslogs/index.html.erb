@@ -1,42 +1,54 @@
 <h1>PV集計</h1>
-<h2>タグ発行</h2>
-<%= text_area_tag(:tag, @tag) %>
-<div>
-  <%= link_to accesslogs_token_create_path do %>
-    <%= button_tag "タグ発行", class: 'btn btn-primary' %>
-  <% end %>
-</div>
-<h2>集計結果</h2>
-<%= form_tag(root_path, method: :get) do %>
-
-  <label>Date:</label>
-  <div>
-    <%= text_field(:settings, :date, required: true, class: 'form', :placeholder => "2018/09/20") %>
-  </div>
-
-  <div>
-  <%= label_tag(:token, 'Token:') %>
+<div class="contents_container">
+  <div class="tag_create">
+    <h3>タグ発行</h3>
+    <%= text_area_tag(:tag, @tag, class: 'tag_create_area') %>
     <div>
-      <%= text_field(:settings, :token, required: true, class: 'form-control' 'form') %>
+     <%= link_to accesslogs_token_create_path do %>
+      <%= button_tag "タグ発行", class: 'btn btn-primary tag_button' %>
+     <% end %>
     </div>
   </div>
+  <div class="data_aggregation">
+    <h2>集計結果</h2>
+    <%= form_tag(root_path, method: :get) do %>
 
-  <label>url:</label>
-    <div class = 'form'>
-      <%= select_tag 'settings[url]', options_for_select(@access_logs_urls.uniq), include_blank: true %>
+      <label>Date:</label>
+      <div>
+        <%= text_field(:settings, :date, required: true, class: 'form', :placeholder => "2018/09/20") %>
+      </div>
+
+      <div class="token_url_boxcontainer">
+        <div class="token">
+          <%= label_tag(:token, 'Token:') %>
+          <div>
+            <%= text_field(:settings, :token, required: true, class: 'form-control' 'form') %>
+          </div>
+        </div>
+
+        <div class="url">
+          <label>url:</label>
+            <div class = 'form'>
+              <%= select_tag 'settings[url]', options_for_select(@access_logs_urls.uniq), include_blank: true %>
+            </div>
+        </div>
+      </div>
+      <%= submit_tag('集計を見る', class: 'btn btn-primary') %>
+    <% end %>
+
+    <div class="aggregation_table">
+      <table border>
+        <tr>
+          <th>時間帯</th>
+          <th>pv</th>
+        </tr>
+      <%- @access_log_array.each_with_index do |pv, index| %>
+        <tr>
+          <td><%= index %></td>
+          <td class= "pvtd"><%= pv %></td>
+        </tr>
+      <% end %>
+      </table>
     </div>
-  <%= submit_tag('集計を見る', class: 'btn btn-primary') %>
-<% end %>
-
-<table border>
-  <tr>
-    <th>時間帯</th>
-    <th>pv</th>
-  </tr>
-<%- @access_log_array.each_with_index do |pv, index| %>
-  <tr>
-    <td><%= index %></td>
-    <td class= "pvtd"><%= pv %></td>
-  </tr>
-<% end %>
-</table>
+  </div>
+</div>
