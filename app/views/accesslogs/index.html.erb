@@ -1,20 +1,32 @@
 <h1>PV集計</h1>
-
-<label>Date:</label>
+<h2>タグ発行</h2>
+<%= text_area_tag(:tag, @tag) %>
 <div>
+  <%= link_to accesslogs_token_create_path do %>
+    <%= button_tag "タグ発行", class: 'btn btn-primary' %>
+  <% end %>
+</div>
+<h2>集計結果</h2>
 <%= form_tag(root_path, method: :get) do %>
-<%= text_field(:date, class: 'form', :placeholder => "2018/09/20") %>
-<%= submit_tag('Send', class: 'btn btn-primary') %>
-<% end %>
-</div>
 
-<div>
-<%= label_tag(:token, 'Token:') %>
-<div>
-  <%= text_field(:settings, :token, value: @token, class: 'form-control' 'form') %>
-  <%= submit_tag('Show PV', class: 'btn btn-primary') %>
-</div>
-</div>
+  <label>Date:</label>
+  <div>
+    <%= text_field(:settings, :date, required: true, class: 'form', :placeholder => "2018/09/20") %>
+  </div>
+
+  <div>
+  <%= label_tag(:token, 'Token:') %>
+    <div>
+      <%= text_field(:settings, :token, required: true, class: 'form-control' 'form') %>
+    </div>
+  </div>
+
+  <label>url:</label>
+    <div class = 'form'>
+      <%= select_tag 'settings[url]', options_for_select(@access_logs_urls.uniq), include_blank: true %>
+    </div>
+  <%= submit_tag('集計を見る', class: 'btn btn-primary') %>
+<% end %>
 
 <table border>
   <tr>
