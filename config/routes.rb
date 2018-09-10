@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
-    root 'accesslogs#index'
-  resources :tokens, only: %i[index new create]
-  resources :accesslogs, only: %i[create]
+  root 'accesslogs#index'
+  get 'accesslogs/token_create'
+  post 'accesslogs/create'
 end
