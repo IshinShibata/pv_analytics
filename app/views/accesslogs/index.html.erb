@@ -36,7 +36,7 @@
       <div class="token">
         <%= label_tag(:token, 'Token:') %>
         <div>
-          <%= text_field(:settings, :token, required: true, class: 'form-control' 'form') %>
+          <%= text_field(:settings, :token, required: true, class: 'token_form', :placeholder => "data-token=\"ここに記載されているtokenを貼り付けてください。\"") %>
         </div>
       </div>
       <div class="url">

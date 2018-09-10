@@ -6,10 +6,11 @@
 .contents_container{
   width: 100%;
 }
+
 ::-webkit-input-placeholder {
-    color: #434a54;
-    opacity: 0.5;
-     }
+  color: #434a54;
+  opacity: 0.5;
+}
 
 table th {
   padding: 10px;
@@ -25,14 +26,12 @@ table td {
   padding: 3px 15px;
 }
 
-.token_url_boxcontainer{
-
-}
 .tag_create{
   margin-top: 10px;
   margin-left: 10px;
   float: left;
 }
+
 .tag_button{
   margin-top: 5px;
 }
@@ -47,9 +46,7 @@ table td {
 
 }
 .url{
-
-  display: inline-block;
-  margin-left: 10px;
+  margin-top: 5px;
 }
 
 h1{
@@ -58,28 +55,28 @@ h1{
 }
 
 h1:before {
-position: absolute;
-content: '';
-bottom: -3px;
-left: 0;
-width: 0;
-height: 0;
-border: none;
-border-left: solid 15px transparent;
-border-bottom: solid 15px rgb(119, 195, 223);
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: none;
+  border-left: solid 15px transparent;
+  border-bottom: solid 15px rgb(119, 195, 223);
 }
 h1:after {
-position: absolute;
-content: '';
-bottom: -3px;
-left: 10px;
-width: 100%;
-border-bottom: solid 3px rgb(119, 195, 223);
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: 10px;
+  width: 100%;
+  border-bottom: solid 3px rgb(119, 195, 223);
 }
 
 .data_aggregation{
   float: left;
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 .aggregation_table{
@@ -91,4 +88,9 @@ border-bottom: solid 3px rgb(119, 195, 223);
   display: inline-block;
   margin-left: 20px;
   margin-top: 67px;
+}
+.token_form{
+  width: 430px;
+  height: 30px;
+  margin-bottom: 10px;
 }

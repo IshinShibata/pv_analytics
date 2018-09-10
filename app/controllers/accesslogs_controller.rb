@@ -42,7 +42,6 @@ class AccesslogsController < ApplicationController
     response.headers["Access-Control-Allow-Origin"] = "*"
     response.headers["Access-Control-Allow-Methods"] = "POST"
     response.headers["Access-Control-Allow-Headers"] = "Content-Type"
-    # binding.pry
     token = Token.find_by(identifier: params[:token])
     token.access_logs.create(url: params[:url])
     {}
