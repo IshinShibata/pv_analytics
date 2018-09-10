@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
-    root 'pvs#index'
-  resources :pvs, only: [:index, :create]
-  resources :urls, only: [:create]
+  root 'accesslogs#index'
+  get 'accesslogs/token_create'
+  post 'accesslogs/create'
 end
