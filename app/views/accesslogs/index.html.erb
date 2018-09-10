@@ -1,4 +1,4 @@
-<h1>PV集計</h1>
+<h1>PvAnalytics</h1>
 <div class="contents_container">
   <div class="tag_create">
     <h3>タグ発行</h3>
@@ -47,6 +47,20 @@
       </div>
     </div>
     <%= submit_tag('集計を見る', class: 'btn btn-primary') %>
+    <div class="sumtable">
+      <table border class="sumtable">
+          <tr>
+            <th>日付</th>
+            <th>WEBサイト全体 or URL</th>
+            <th>総PV数</th>
+          </tr>
+          <tr>
+            <td><%= @date %></td>
+            <td><%= @url %></td>
+            <td><%= @sum_access_log_count %></td>
+          </tr>
+      </table>
+    </div>
   </div>
   <% end %>
 </div>

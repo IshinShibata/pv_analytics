@@ -14,12 +14,14 @@
 
 table th {
   padding: 10px;
-  font-size: 20px;
+  font-size: 15px;
+  text-align: center;
 }
 
 table td {
   padding: 3px 10px;
   font-size: 15px;
+  text-align: center;
 }
 
 .pvtd{
@@ -93,4 +95,9 @@ h1:after {
   width: 430px;
   height: 30px;
   margin-bottom: 10px;
+}
+
+.sumtable{
+  margin-top: 30px;
+  font-size: 15px;
 }
