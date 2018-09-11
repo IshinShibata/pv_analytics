@@ -1,7 +1,7 @@
 # README
 Name
 ====
-###PvAnalytics
+PvAnalytics
 
 Overview
 pv数計測ツール
